@@ -15,7 +15,7 @@ arxiv=ArxivQueryRun(api_wrapper=arxiv_wrapper)
 api_wrapper=WikipediaAPIWrapper(top_k_results=1,doc_content_chars_max=200)
 wiki=WikipediaQueryRun(api_wrapper=api_wrapper)
 pubmed = PubmedQueryRun()
-
+##medical
 search=DuckDuckGoSearchRun(name="Search")
 
 
@@ -47,4 +47,5 @@ if prompt:=st.chat_input(placeholder="What is pubmed?"):
         response=search_agent.run(st.session_state.messages,callbacks=[st_cb])
         st.session_state.messages.append({'role':'assistant',"content":response})
         st.write(response)
+
 
